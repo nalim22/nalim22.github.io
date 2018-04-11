@@ -1,7 +1,26 @@
-<h1 aline="center">신이 나를 만들 때"></h1>
+<h1 aline="center">신이 나를 만들 때</h1>
 <!--<%= @lotto %>-->
-<%= @text %>
+<!--<%= @text %>-->
 <br>
-<%= image_tag "#{@gg}/#{rand(4)}.png" %>
-<%= image_tag "#{@gg}/#{rand(4)}.png" %>
-<%= image_tag "#{@gg}/#{rand(4)}.png" %>
+<!--<%= @image_lotto%>-->
+<!--<%= image_tag "#{@gg}/#{rand(4)}.png" %>-->
+<!--<%= image_tag "#{@gg}/#{rand(4)}.png" %>-->
+<!--<%= image_tag "#{@gg}/#{rand(4)}.png" %>-->
+
+
+<%for i in 0...3 do%>
+<% if @image_lotto[i] == 0 %>
+<%= @text0 %>
+<% end %>
+<% if @image_lotto[i] == 1 %>
+<%= @text1.sample(1) %>
+<% end %>
+<% if @image_lotto[i] == 2 %>
+<%= @text2.sample(1) %>
+<% end %>
+<% if @image_lotto[i] == 3 %>
+<%= @text3.sample(1) %>
+<% end %>
+<%= image_tag @image_lotto[i], height: '200', width: '200' %>
+<%end%>
+
